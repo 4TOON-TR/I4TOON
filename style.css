@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #1a1a3e, #302b63);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 780px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    border-radius: 28px;
+    padding: 30px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================ */
+/* هدر */
+/* ============================================ */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 20px rgba(247, 151, 30, 0.3);
+}
+
+.logo-text {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #f7971e;
+}
+
+.logo-sub {
+    font-size: 0.6rem;
+    color: #666;
+    display: block;
+}
+
+/* ===== BY 4TOON ===== */
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.rgb-text {
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    display: inline-block;
+    background: linear-gradient(90deg, #ff0000, #ff7700, #ffdd00, #00ff00, #0077ff, #8800ff, #ff0000);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rgbMove 3s linear infinite;
+}
+
+@keyframes rgbMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+}
+
+/* ============================================ */
+/* بخش آمار */
+/* ============================================ */
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 14px;
+    padding: 14px 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-2px);
+}
+
+.stat-number {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #f7971e;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: #888;
+    margin-top: 2px;
+}
+
+/* ============================================ */
+/* توضیحات */
+/* ============================================ */
+.hub-description {
+    text-align: center;
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    line-height: 1.8;
+    padding: 0 10px;
+}
+
+.hub-description b {
+    color: #f7971e;
+}
+
+/* ============================================ */
+/* عنوان بخش‌ها */
+/* ============================================ */
+.section-title {
+    color: #ddd;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    padding-right: 12px;
+    border-right: 3px solid #f7971e;
+}
+
+/* ============================================ */
+/* پروژه‌های برجسته */
+/* ============================================ */
+.featured-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.featured-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, rgba(247, 151, 30, 0.08), rgba(255, 210, 0, 0.04));
+    border-radius: 16px;
+    border: 1px solid rgba(247, 151, 30, 0.12);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(247, 151, 30, 0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.featured-card:hover::before {
+    opacity: 1;
+}
+
+.featured-card:hover {
+    transform: translateX(-6px);
+    border-color: rgba(247, 151, 30, 0.25);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.featured-icon {
+    font-size: 34px;
+    width: 50px;
+    text-align: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.featured-info {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.featured-info h3 {
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.featured-info p {
+    color: #888;
+    font-size: 0.85rem;
+    margin-top: 2px;
+}
+
+.featured-tags {
+    display: flex;
+    gap: 6px;
+    margin-top: 5px;
+}
+
+.tag {
+    font-size: 0.6rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.tag.new {
+    background: rgba(0, 206, 201, 0.15);
+    color: #00cec9;
+    border: 1px solid rgba(0, 206, 201, 0.2);
+}
+
+.tag.updated {
+    background: rgba(247, 151, 30, 0.15);
+    color: #f7971e;
+    border: 1px solid rgba(247, 151, 30, 0.2);
+}
+
+.tag.active {
+    background: rgba(107, 203, 119, 0.12);
+    color: #6bcb77;
+    border: 1px solid rgba(107, 203, 119, 0.15);
+}
+
+.featured-arrow {
+    color: #f7971e;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.featured-card:hover .featured-arrow {
+    transform: translateX(6px);
+}
+
+/* ============================================ */
+/* همه پروژه‌ها */
+/* ============================================ */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 14px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover:not(.coming-soon) {
+    background: rgba(255, 255, 255, 0.07);
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.project-card.coming-soon {
+    opacity: 0.5;
+}
+
+.project-icon {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.project-info h3 {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.project-info p {
+    color: #888;
+    font-size: 0.75rem;
+    margin-top: 2px;
+}
+
+.project-status {
+    display: inline-block;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    margin-top: 6px;
+}
+
+.project-status.active {
+    background: rgba(0, 206, 201, 0.12);
+    color: #00cec9;
+    border: 1px solid rgba(0, 206, 201, 0.15);
+}
+
+.project-status.beta {
+    background: rgba(247, 151, 30, 0.12);
+    color: #f7971e;
+    border: 1px solid rgba(247, 151, 30, 0.15);
+}
+
+.project-status.soon {
+    background: rgba(255, 68, 68, 0.08);
+    color: #ff4444;
+    border: 1px solid rgba(255, 68, 68, 0.08);
+}
+
+.project-link {
+    margin-top: 10px;
+    padding: 4px 18px;
+    border-radius: 20px;
+    background: rgba(247, 151, 30, 0.12);
+    color: #f7971e;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background: rgba(247, 151, 30, 0.2);
+}
+
+.project-link.disabled {
+    background: rgba(255, 255, 255, 0.03);
+    color: #555;
+    cursor: not-allowed;
+}
+
+/* ============================================ */
+/* بخش آپدیت‌ها */
+/* ============================================ */
+.updates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.update-item {
+    display: flex;
+    gap: 14px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border-left: 3px solid #f7971e;
+    transition: all 0.3s ease;
+}
+
+.update-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.update-date {
+    color: #666;
+    font-size: 0.7rem;
+    min-width: 85px;
+    padding-top: 2px;
+}
+
+.update-content {
+    flex: 1;
+}
+
+.update-content p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+.update-content b {
+    color: #f7971e;
+}
+
+.update-badge {
+    display: inline-block;
+    padding: 1px 10px;
+    border-radius: 12px;
+    font-size: 0.55rem;
+    font-weight: 700;
+    margin-left: 6px;
+}
+
+.update-badge.new {
+    background: rgba(0, 206, 201, 0.12);
+    color: #00cec9;
+}
+
+.update-badge.update {
+    background: rgba(247, 151, 30, 0.12);
+    color: #f7971e;
+}
+
+/* ============================================ */
+/* فوتر */
+/* ============================================ */
+.footer {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.footer .rgb-text {
+    font-size: 0.85rem;
+    padding: 4px 16px;
+}
+
+.footer-text {
+    color: #555;
+    font-size: 0.7rem;
+    margin-top: 6px;
+}
+
+.footer-version {
+    color: #333;
+    font-size: 0.6rem;
+    margin-top: 4px;
+}
+
+/* ============================================ */
+/* واکنش‌گرا */
+/* ============================================ */
+@media (max-width: 600px) {
+    .container {
+        padding: 18px 15px;
+    }
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .logo-text {
+        font-size: 1rem;
+    }
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+    .rgb-text {
+        font-size: 0.65rem;
+        padding: 2px 8px;
+    }
+    .featured-card {
+        flex-wrap: wrap;
+        padding: 14px;
+    }
+    .featured-icon {
+        font-size: 28px;
+        width: 40px;
+    }
+    .update-item {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .update-date {
+        min-width: unset;
+    }
+}
+
+@media (max-width: 400px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
